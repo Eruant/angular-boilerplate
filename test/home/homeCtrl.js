@@ -1,7 +1,17 @@
-/*globals describe, it, expect, before*/
-describe('homeCtrl', function () {
+/*globals describe, it, expect, beforeEach*/
+describe('HomeCtrl', function () {
 
-  it('should do something', function () {
-    expect(1).toBe(1);
+  var scope;
+
+  beforeEach(angular.mock.module('boilerplate.home'));
+  beforeEach(angular.mock.inject(function ($rootScope, $controller) {
+    scope = $rootScope.$new();
+    $controller('HomeCtrl', {
+      $scope: scope
+    });
+  }));
+
+  it('should have a test', function () {
+    expect(scope.test).toBe('a test');
   });
 });

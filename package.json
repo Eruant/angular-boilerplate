@@ -4,7 +4,7 @@
   "description": "A starting point to build an Angular application",
   "main": "index.js",
   "scripts": {
-    "test": "node gulpfile.js && mocha --reporter spec --no-colors"
+    "test": "node gulpfile.js && gulp test"
   },
   "repository": {
     "type": "git",

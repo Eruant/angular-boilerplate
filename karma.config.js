@@ -17,6 +17,7 @@ module.exports = function (config) {
     files: [
       'app/lib/angular.js',
       'app/lib/angular-route.js',
+      'app/lib/angular-mocks.js',
       'app/index.js',
       'app/home/homeModule.js',
       'app/home/homeCtrl.js',
