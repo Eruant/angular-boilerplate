@@ -1,14 +1,18 @@
 var gulp = require('gulp'),
-  util = require('gulp-util'),
   jshint = require('gulp-jshint'),
   browserSync = require('browser-sync'),
+  karma = require('gulp-karma'),
 
   cfg = {
     root: 'app'
   };
   
 cfg.js = {
-  all: cfg.root + '/**/*.js'
+  all: [
+    cfg.root + '/**/*.js',
+    '!' + cfg.root + '/lib/*'
+  ],
+  test: '/test/**/*.js'
 };
 
 cfg.server = {
@@ -21,20 +25,22 @@ cfg.server = {
 
 gulp.task('lint', function () {
   return gulp.src(cfg.js.all)
-    .pipe(util.buffer(function (err, files) {
-      console.log("[FILES]", files);
-    }))
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .on('error', function () {
-      console.error('[JSHint] encountered an error');
-      this.emit('end');
+    .on('error', function (err) {
+      throw err;
     });
 });
 
 gulp.task('karma', function () {
-  return gulp.src(cfg.js.all)
-    .pipe(util.noop());
+  return gulp.src(cfg.js.test)
+    .pipe(karma({
+      configFile: 'karma.config.js',
+      action: 'run'
+    }))
+    .on('error', function (err) {
+      throw err;
+    });
 });
 
 gulp.task('test-server', function () {
@@ -46,6 +52,7 @@ gulp.task('test-server', function () {
 });
 
 gulp.task('test', ['lint', 'karma']);
-gulp.task('default', ['test']);
+gulp.task('server', ['test-server']);
+gulp.task('default', ['test', 'test-server']);
 
 // gutil.env.type === 'production' ? uglify() : gutil.noop()

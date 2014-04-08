@@ -1,1 +1,0 @@
-anglular.module('boilerplate.home', []);
