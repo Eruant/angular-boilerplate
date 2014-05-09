@@ -1,35 +1,16 @@
 /*globals Home*/
 
-describe('Home', function () {
+describe('HomeCtrl', function () {
 
-  //beforeEach(angular.mock.module('Home'));
+  beforeEach(module('Home'));
 
-  /*
-  it('should exist', function () {
-    expect(Home).toBeDefined();
-  });
-  */
+  it('should create a value of "test" in the scope', inject(function ($controller) {
+    var scope = {},
+      ctrl = $controller('HomeCtrl', {
+        $scope: scope
+      });
 
-  //inject(function ($scope) {
-
-    //it('should set test', function () {
-      //console.log($scope);
-      //expect($scope.test).toEqual('a test!');
-    //});
-
-  //});
-  /*
-  beforeEach(angular.mock.module('boilerplate.home'));
-  beforeEach(angular.mock.inject(function ($rootScope, $controller) {
-    scope = $rootScope.$new();
-    $controller('HomeCtrl', {
-      $scope: scope
-    });
+    expect(scope.test).toBeDefined();
   }));
-
-  it('should have a test', function () {
-    expect(scope.test).toBe('a test');
-  });
-  */
 
 });
