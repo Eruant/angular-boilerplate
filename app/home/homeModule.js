@@ -1,6 +1,1 @@
-(function () {
-  'use strict';
-
-  angular.module('boilerplate.home', []);
-
-}());
+angular.module('Home', []);

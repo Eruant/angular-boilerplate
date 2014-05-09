@@ -10,7 +10,7 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['ng-scenario', 'jasmine'],
 
 
     // list of files / patterns to load in the browser
@@ -18,7 +18,7 @@ module.exports = function (config) {
       'app/lib/angular.js',
       'app/lib/angular-route.js',
       'app/lib/angular-mocks.js',
-      'app/index.js',
+      'app/app.js',
       'app/home/homeModule.js',
       'app/home/homeCtrl.js',
       'test/**/*.js'
@@ -27,6 +27,7 @@ module.exports = function (config) {
 
     // list of files to exclude
     exclude: [
+      'app/lib/docs/**/*'
     ],
 
 
@@ -62,7 +63,8 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox', 'Safari'],
+    //browsers: ['Chrome', 'Firefox', 'Safari'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

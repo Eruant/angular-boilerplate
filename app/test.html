@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <meta http-equiv="content-type" content="text/html; carset=utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Boilerplate</title>
+</head>
+<body>
+
+  <script src="./lib/angular.js"></script>
+  <script src="./lib/angular-route.js"></script>
+
+  <script>
+
+    angular.module('app', ['ngRoute'])
+
+      .config(['$routeProvider', function ($routeProvider) {
+
+        console.log('app.config');
+
+        $routeProvider
+          .when('/', {
+            template: '<div>TEST</div>'
+          })
+          .otherwise({
+            redirectTo: '/'
+          });
+
+      }]);
+
+  </script>
+
+  <p>Before template</p>
+  <div ng-view></div>
+  <p>After template</p>
+
+</body>
+</html>
+

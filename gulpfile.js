@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 cfg.js = {
   all: [
     cfg.root + '/**/*.js',
-    '!' + cfg.root + '/lib/*'
+    '!' + cfg.root + '/lib/**/*'
   ],
   test: '/test/**/*.js'
 };
@@ -18,9 +18,10 @@ cfg.js = {
 cfg.server = {
   watch: [
     cfg.root + '/**/*.js',
+    '!' + cfg.root + '/lib/**/*',
     cfg.root + '/**/*.html'
   ],
-  baseDir: cfg.root
+  baseDir: cfg.root + ''
 };
 
 gulp.task('lint', function () {

@@ -1,9 +1,6 @@
-(function () {
-  'use strict';
+angular.module('Home', function () {})
 
-  angular.module('boilerplate.home').controller('HomeCtrl', ['$scope', function ($scope) {
-    console.log('HERE');
+  .controller('HomeCtrl', ['$scope', function ($scope) {
+    console.log('Loaded home controller');
     $scope.test = 'a test';
   }]);
-
-}());
