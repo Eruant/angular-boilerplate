@@ -19,16 +19,19 @@ module.exports = function (config) {
       'app/lib/angular.js',
       'app/lib/angular-route.js',
       'app/lib/angular-mocks.js',
+
       'app/app.js',
       'app/home/homeModule.js',
       'app/home/homeCtrl.js',
-      'test/**/*.js'
+
+      'app/**/*_test.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'app/lib/docs/**/*'
+      'app/lib/docs/**/*',
+      'app/lib/i18n/**/*'
     ],
 
 
@@ -65,7 +68,7 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     //browsers: ['Chrome', 'Firefox', 'Safari'],
-    browsers: ['Chrome', 'Firefox', 'Safari'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

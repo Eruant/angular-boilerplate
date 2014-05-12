@@ -4,7 +4,7 @@ var gulp = require('gulp'),
   karma = require('gulp-karma'),
 
   cfg = {
-    root: 'app'
+    root: '/app'
   };
   
 cfg.js = {
@@ -12,7 +12,10 @@ cfg.js = {
     cfg.root + '/**/*.js',
     '!' + cfg.root + '/lib/**/*'
   ],
-  test: '/test/**/*.js'
+  test: [
+    cfg.root + '/**/*_test.js',
+    '!' + cfg.root + '/lib/**/*_test.js'
+  ]
 };
 
 cfg.server = {
@@ -36,6 +39,7 @@ gulp.task('lint', function () {
 gulp.task('karma', function () {
   return gulp.src(cfg.js.test)
     .pipe(karma({
+      baseDir: './',
       configFile: 'karma.config.js',
       action: 'run'
     }))

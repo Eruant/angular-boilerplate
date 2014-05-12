@@ -3,6 +3,8 @@ angular.module('app', [
   'Home'
 ])
 
+  .value('version', '0.1')
+
   .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider.when('/', {

@@ -15,6 +15,11 @@
     "console": true,
     "require": true,
     "module": true,
-    "angular": true
+    "angular": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "inject": true,
+    "expect": true
   }
 }
