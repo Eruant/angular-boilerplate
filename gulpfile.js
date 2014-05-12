@@ -10,7 +10,8 @@ var gulp = require('gulp'),
 cfg.js = {
   all: [
     cfg.root + '/**/*.js',
-    '!' + cfg.root + '/lib/**/*'
+    '!' + cfg.root + '/lib/**/*',
+    '!' + cfg.root  + '/**/*_test.js'
   ],
   test: [
     '/' + cfg.root + '/**/*_test.js',
