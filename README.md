@@ -1,6 +1,4 @@
-# Angular Boilerplate
-
-[![Build Status](https://travis-ci.org/Eruant/angular-boilerplate.svg?branch=master)](https://travis-ci.org/Eruant/angular-boilerplate)
+# [Angular Boilerplate][root] [![Build Status](https://travis-ci.org/Eruant/angular-boilerplate.svg?branch=master)][travis]
 
 A starting point to build an Angular application
 
@@ -45,5 +43,7 @@ The files have been organised in a modular way.
 
 As you can see each folder contains a module declaration file, a test file and a view. It can also contain the CSS and image files. The format is repeated in the folders below. This means that each module can be placed inside of another module, which means copying from project to project can be achieved.
 
-[node]: http://nodejs.org/
-[gulp]: http://gulpjs.com/
+[root]:   https://github.com/Eruant/angular-boilerplate
+[travis]: https://travis-ci.org/Eruant/angular-boilerplate
+[node]:   http://nodejs.org/
+[gulp]:   http://gulpjs.com/
