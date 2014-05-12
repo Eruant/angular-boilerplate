@@ -21,18 +21,19 @@
   },
   "homepage": "https://github.com/Eruant/angular-boilerplate",
   "devDependencies": {
-    "jshint": "^2.5.0",
-    "gulp": "^3.6.0",
-    "gulp-mocha": "^0.4.1",
     "browser-sync": "^0.7.4",
+    "gulp": "^3.6.0",
     "gulp-jshint": "^1.5.3",
+    "gulp-karma": "0.0.4",
+    "gulp-mocha": "^0.4.1",
     "gulp-util": "^2.2.14",
+    "jshint": "^2.5.0",
+    "karma": "^0.12.4",
     "karma-chrome-launcher": "^0.1.3",
     "karma-firefox-launcher": "^0.1.3",
     "karma-jasmine": "^0.1.5",
-    "karma": "^0.12.4",
-    "karma-safari-launcher": "^0.1.1",
-    "gulp-karma": "0.0.4",
-    "karma-ng-scenario": "^0.1.0"
+    "karma-ng-scenario": "^0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-safari-launcher": "^0.1.1"
   }
 }

@@ -1,6 +1,6 @@
 # Angular Boilerplate
 
-[![Build Status](https://travis-ci.org/Eruant/angular-boilerplate.svg?branch=master])](https://travis-ci.org/Eruant/angular-boilerplate)
+[![Build Status](https://travis-ci.org/Eruant/angular-boilerplate.svg?branch=master)](https://travis-ci.org/Eruant/angular-boilerplate)
 
 A starting point to build an Angular application
 
