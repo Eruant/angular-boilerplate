@@ -21,8 +21,7 @@ module.exports = function (config) {
       'app/lib/angular-mocks.js',
 
       'app/app.js',
-      'app/home/homeModule.js',
-      'app/home/homeCtrl.js',
+      'app/home/home.js',
 
       'app/**/*_test.js'
     ],

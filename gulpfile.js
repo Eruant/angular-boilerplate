@@ -4,7 +4,7 @@ var gulp = require('gulp'),
   karma = require('gulp-karma'),
 
   cfg = {
-    root: '/app'
+    root: 'app'
   };
   
 cfg.js = {
@@ -13,8 +13,8 @@ cfg.js = {
     '!' + cfg.root + '/lib/**/*'
   ],
   test: [
-    cfg.root + '/**/*_test.js',
-    '!' + cfg.root + '/lib/**/*_test.js'
+    '/' + cfg.root + '/**/*_test.js',
+    '/!' + cfg.root + '/lib/**/*_test.js'
   ]
 };
 
