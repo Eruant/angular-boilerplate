@@ -10,19 +10,19 @@ Make sure that you have [node][node] and [gulp][gulp] setup.
 
 To get the files first clone this repository
 
-``` shell
+```sh
 $ git clone git@github.com:Eruant/angular-boilerplate.git
 ```
 
 Install the `node` modules.
 
-``` shell
+```sh
 $ npm install
 ```
 
 Finally run `gulp` to test the files and start a local server.
 
-``` shell
+```sh
 $ gulp
 ```
 
