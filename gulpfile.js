@@ -4,7 +4,8 @@ var gulp = require('gulp'),
   karma = require('gulp-karma'),
 
   cfg = {
-    root: 'app'
+    root: 'src',
+    dest: 'app'
   };
   
 cfg.js = {
