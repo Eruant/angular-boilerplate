@@ -1,9 +1,11 @@
 var gulp = require('gulp'),
+  gutil = require('gulp-util'),
   jshint = require('gulp-jshint'),
   browserSync = require('browser-sync'),
   karma = require('gulp-karma'),
   clean = require('gulp-clean'),
   compass = require('gulp-compass'),
+  runSequence = require('gulp-run-sequence'),
 
   cfg = {
     root: 'src',
@@ -54,9 +56,13 @@ cfg.server = {
 
 // JavaScript
 
-gulp.task('js', ['js-test', 'js-copy']);
+gulp.task('js', function (cb) {
+  runSequence('js-test', 'js-copy', cb);
+});
 
-gulp.task('js-test', ['js-lint', 'js-karma']);
+gulp.task('js-test', function (cb) {
+  runSequence('js-lint', 'js-karma', cb);
+});
 
 gulp.task('js-lint', function () {
   return gulp.src(cfg.js.main)
@@ -139,10 +145,28 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('compile', ['clean', 'js', 'markup']);
+gulp.task('compile', function (cb) {
+  runSequence('js', 'markup', 'css', cb);
+});
 
-gulp.task('test', ['js-test']);                           // $ npm test
-gulp.task('server', ['test-server']);                     // $ gulp server
-gulp.task('default', ['test', 'compile', 'test-server']); // $ gulp
+gulp.task('test-build', function (cb) {
+  runSequence('clean', 'compile', 'test-server', cb);
+});
+
+gulp.task('production-build', function (cb) {
+  runSequence('clean', 'compile', 'compiled-server', cb);
+});
+
+gulp.task('test', ['js-test']);           // $ npm test
+gulp.task('server', ['test-server']);     // $ gulp server
+gulp.task('build', ['production-build']);
+
+gulp.task('default', function (cb) {
+  if (gutil.env.type === 'production') {
+    runSequence('production-build', cb);
+  } else {
+    runSequence('test-build', cb);
+  }
+});
 
 // gutil.env.type === 'production' ? uglify() : gutil.noop()
