@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   karma = require('gulp-karma'),
   clean = require('gulp-clean'),
+  compass = require('gulp-compass'),
 
   cfg = {
     root: 'src',
@@ -30,6 +31,14 @@ cfg.markup = {
   all: [
     cfg.root + '/**/*.html'
   ],
+  out: cfg.dest + ''
+};
+
+cfg.css = {
+  all: [
+    cfg.root + '/*.scss'
+  ],
+  root: cfg.root,
   out: cfg.dest + ''
 };
 
@@ -82,6 +91,27 @@ gulp.task('markup', ['markup-copy']);
 gulp.task('markup-copy', function () {
   return gulp.src(cfg.markup.all)
     .pipe(gulp.dest(cfg.markup.out));
+});
+
+// css
+gulp.task('css', ['test-scss', 'scss']);
+
+gulp.task('test-scss', function () {
+  return gulp.src(cfg.css.all)
+    .pipe(compass({
+      css: cfg.css.out,
+      sass: cfg.css.root
+    }))
+    .pipe(gulp.dest(cfg.css.root));
+});
+
+gulp.task('scss', function () {
+  return gulp.src(cfg.css.all)
+    .pipe(compass({
+      css: cfg.css.out,
+      sass: cfg.css.root
+    }))
+    .pipe(gulp.dest(cfg.css.out));
 });
 
 // browsers

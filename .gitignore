@@ -27,5 +27,7 @@ node_modules
 # OS
 .DS_Store
 
+# Custom
 app/lib/docs
 app/lib/i18n
+.sass-cache

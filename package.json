@@ -24,6 +24,7 @@
     "browser-sync": "^0.7.4",
     "gulp": "^3.6.0",
     "gulp-clean": "^0.2.4",
+    "gulp-compass": "^1.1.9",
     "gulp-jshint": "^1.5.3",
     "gulp-karma": "0.0.4",
     "gulp-mocha": "^0.4.1",
