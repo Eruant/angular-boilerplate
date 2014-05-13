@@ -26,7 +26,7 @@ Finally run `gulp` to test the files and start a local server.
 $ gulp
 ```
 
-> **Note** you should only edit files in the `src` dir. The `app` directory is a compiled version that will get overwritten on each build.
+> **Please Note:** You should only edit files in the `src` dir. The `app` directory is a compiled version that will get overwritten on each build.
 
 ## File organisation
 
