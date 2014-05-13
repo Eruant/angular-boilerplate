@@ -26,12 +26,14 @@ Finally run `gulp` to test the files and start a local server.
 $ gulp
 ```
 
+*Note* you should only edit files in the `src` dir. The `app` directory is a compiled version that will get overwritten on each build.
+
 ## File organisation
 
 The files have been organised in a modular way.
 
 ```
-/app
+/src
   app.js
   app_test.js
   index.html
